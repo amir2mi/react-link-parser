@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useMemo } from "react";
 import getLabelFromChildren from "../../utils/getChildrenLabel";
-import isValidUrl from "../../utils/isValidUrl";
+import { isValidEmail, isValidUrl } from "../../utils/validation";
 
 interface WatchersProps {
   type?: "startsWith" | "endsWith";
@@ -11,6 +11,7 @@ interface WatchersProps {
 interface LinkParserProps {
   children: React.ReactNode;
   watchers?: WatchersProps[];
+  parseNewLine?: boolean;
 }
 
 const defaultWatchers = [
@@ -24,17 +25,21 @@ const defaultWatchers = [
   },
 ];
 
-export default function LinkParser({ children, watchers = defaultWatchers }: LinkParserProps) {
+export default function LinkParser({ children, parseNewLine = true, watchers = defaultWatchers }: LinkParserProps) {
   // separate words by space
-  const words = getLabelFromChildren(children)?.split(" ");
+  const words = useMemo(() => getLabelFromChildren(children)?.split(" "), [children]);
 
   return (
     <>
       {words.map((word, index) => {
+        if (parseNewLine && word === "\n") return <br />;
+
         const { watchFor, render } =
           watchers?.find(
             ({ type = "startsWith", watchFor }) =>
-              (watchFor === "link" && isValidUrl(word)) || (watchFor !== "" && word?.[type](watchFor))
+              (watchFor !== "" && word?.[type](watchFor)) ||
+              (watchFor === "email" && isValidEmail(word)) ||
+              (watchFor === "link" && isValidUrl(word))
           ) || {};
 
         const content = index + 1 === words?.length ? ` ${word}` : `${word} `;
