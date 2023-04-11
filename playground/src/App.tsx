@@ -1,5 +1,5 @@
 import { Badge } from "react-flatifycss";
-import { LinkParser } from "../../src";
+import LinkParser from "../../src";
 
 function App() {
   return (

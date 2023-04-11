@@ -9,8 +9,8 @@
   ],
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "build-watch": "rollup -c -w",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "build-watch": "rollup -c -w --bundleConfigAsCjs",
     "playground": "cd playground && yarn dev",
     "install-all": "yarn install & cd playground && yarn install"
   },
