@@ -1,0 +1,29 @@
+{
+  "name": "react-component",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "build-watch": "rollup -c -w",
+    "playground": "cd playground && yarn dev",
+    "install-all": "yarn install & cd playground && yarn install"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "rollup": "^3.20.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
