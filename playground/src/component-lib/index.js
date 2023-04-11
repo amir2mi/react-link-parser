@@ -40,4 +40,4 @@ function LinkParser({ children, watchers = defaultWatchers }) {
     })));
 }
 
-export { LinkParser };
+export { LinkParser as default };

@@ -1,2 +1,2 @@
 import LinkParser from "./components/LinkParser";
-export { LinkParser };
+export default LinkParser;
