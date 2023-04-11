@@ -1,6 +1,6 @@
 # React Link Parser
 
-This packages contains a React component that can parse plain text into links, emails or render elements that **start** or **end** with specific character or word the way you want.
+A React component that can parse plain text into links, emails or render elements that **start** or **end** with specific character or word the way you want.  
 
 ## Install it
 
@@ -20,7 +20,8 @@ Let's start using the component with a couple of practical examples.
 
 ### A simple example
 
-As a common use case, let's say you want to identify links in your text and render them with your custom render component. This is the default behavior of the component, so all you need to do is import the package and start using it in your React application.
+As a common use case, let's say you want to identify links in your text and render them with your custom render component.  
+This is the default behavior of the component, so all you need to do is import the package and start using it in your React application.
 
 ```jsx
 import LinkParser from "react-link-parser";
