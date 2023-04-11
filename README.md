@@ -49,7 +49,7 @@ export function App() {
     {
       type: "startsWith",
       watchFor: "#",
-      render: (tag) => <b>{tag}</b>,
+      render: (tag) => <a href={`/posts?filterByTag=${tag}`}>{tag}</a>,
     },
     {
       type: "startsWith",
