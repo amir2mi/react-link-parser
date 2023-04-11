@@ -69,6 +69,14 @@ export function App() {
         </a>
       ),
     },
+    {
+      watchFor: "email",
+      render: (url: string) => (
+        <a href={`mailto:${url}`} target="_blank" rel="noreferrer noopener">
+          {url.replace("@", "[at]")}
+        </a>
+      ),
+    },
   ];
 
   return (
@@ -76,7 +84,7 @@ export function App() {
       #Far_far_away, behind the word mountains, far from the countries @Vokalia and @Consonantia, there live the blind
       texts. Separated they live in @Bookmarksgrove right at the coast of the Semantics*, a large language ocean. A
       small river named Duden flows by their place and supplies it with the necessary regelialia. \n Credit: \n
-      https://www.blindtextgenerator.com/lorem-ipsum \n Contact Me: mail@mail.me
+      https://www.blindtextgenerator.com/lorem-ipsum \n Contact Me: happy.cactus@mail.me
     </LinkParser>
   );
 }
