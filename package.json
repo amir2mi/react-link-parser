@@ -1,6 +1,7 @@
 {
   "name": "react-link-parser",
-  "version": "1.0.1",
+  "version": "1.1.0",
+  "description": "Effortlessly parse text into links, tags, mentions, emails, etc.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
@@ -8,10 +9,27 @@
     "dist"
   ],
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amir2mi/react-link-parser.git"
+  },
+  "keywords": [
+    "react",
+    "parser",
+    "react-parser",
+    "text-parser",
+    "string-parser"
+  ],
+  "author": "Amir M. Mohamadi",
+  "bugs": {
+    "url": "https://github.com/amir2mi/react-link-parser/issues"
+  },
+  "homepage": "https://flatifycss.com/",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build-watch": "rollup -c -w --bundleConfigAsCjs",
     "playground": "cd playground && yarn dev",
+    "build-website": "cd website && yarn build && mv",
     "install-all": "yarn install & cd playground && yarn install"
   },
   "devDependencies": {
