@@ -12,6 +12,7 @@ interface LinkParserProps {
   children: React.ReactNode;
   watchers?: WatchersProps[];
   parseNewLine?: boolean;
+  newLineWatcher?: string;
 }
 
 const defaultWatchers = [
@@ -25,14 +26,20 @@ const defaultWatchers = [
   },
 ];
 
-export default function LinkParser({ children, parseNewLine = true, watchers = defaultWatchers }: LinkParserProps) {
+export default function LinkParser({
+  children,
+  parseNewLine = true,
+  newLineWatcher = "\\n",
+  watchers = defaultWatchers,
+}: LinkParserProps) {
   // separate words by space
   const words = useMemo(() => getLabelFromChildren(children)?.split(" "), [children]);
 
   return (
     <>
       {words.map((word, index) => {
-        if (parseNewLine && word === "\n") return <br />;
+        const key = `${index}_${word}`;
+        if (parseNewLine && word === newLineWatcher) return <br key={key} />;
 
         const { watchFor, render } =
           watchers?.find(
@@ -44,7 +51,7 @@ export default function LinkParser({ children, parseNewLine = true, watchers = d
 
         const content = index + 1 === words?.length ? ` ${word}` : `${word} `;
 
-        return <Fragment key={`${index}_${word}`}>{watchFor ? render?.(content) ?? content : content}</Fragment>;
+        return <Fragment key={key}>{watchFor ? render?.(content) ?? content : content}</Fragment>;
       })}
     </>
   );

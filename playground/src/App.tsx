@@ -1,4 +1,4 @@
-import { Badge } from "react-flatifycss";
+import { Highlight } from "react-flatifycss";
 import LinkParser from "../../src";
 
 function App() {
@@ -10,12 +10,27 @@ function App() {
             {
               type: "startsWith",
               watchFor: "#",
-              render: (text) => <Badge theme="orange">{text}</Badge>,
+              render: (text) => (
+                <a href={`/post?filterByTag=${text}`} target="_blank" rel="noreferrer noopener nofollow">
+                  <Highlight inline theme="orange-light" sx="margin-right: 4px">
+                    {text}
+                  </Highlight>
+                </a>
+              ),
+            },
+            {
+              type: "endsWith",
+              watchFor: "*",
+              render: (text) => <b style={{ color: "var(--flatify__color-red-primary)" }}>{text.replace("*", "")}</b>,
             },
             {
               type: "startsWith",
               watchFor: "@",
-              render: (text) => <Badge theme="blue">{text}</Badge>,
+              render: (text) => (
+                <Highlight inline theme="success-light" sx="margin-right: 4px">
+                  {text}
+                </Highlight>
+              ),
             },
             {
               watchFor: "link",
@@ -35,10 +50,10 @@ function App() {
             },
           ]}
         >
-          How happy happy.com I am to be gone! Best of #friends what is the heart of man! https://happy.com To forsake
-          you, #whom I love so much, happy@happy.com from whom I was #inseparable and be happy! I @know you will
-          @forgive me for it. Were not my other #associations so chosen happy.cactus@mail.me by Fate as to make a @heart
-          like mine uneasy?
+          #Far_far_away, behind the word mountains, far from the countries @Vokalia and Consonantia, there live the
+          blind texts. Separated they live in @Bookmarks right at the coast of the Semantics* a large language ocean. A
+          small river named #Duden flows* by their place and supplies it with the necessary #regelialia. \n Credit: \n
+          https://www.blindtextgenerator.com/lorem-ipsum \n Contact Me: happy.cactus@mail.me
         </LinkParser>
       </p>
     </div>
