@@ -1,6 +1,13 @@
 # React Link Parser
 
-A React component that can parse plain text into links, emails or render elements that **start** or **end** with specific character or word the way you want.  
+[![npm](https://img.shields.io/npm/dt/react-link-parser.svg?style=flat-square)](https://www.npmjs.com/package/react-link-parser)
+[![npm](https://img.shields.io/npm/v/react-link-parser.svg?style=flat-square)](https://www.npmjs.com/package/react-link-parser)
+[![npm](https://img.shields.io/npm/l/react-link-parser.svg?style=flat-square)](https://github.com/danbovey/react-link-parser/blob/master/LICENSE)
+
+A React component that parses plain text into links, emails or renders elements that **start** or **end** with a specific character or word in the way you want.  
+
+## How it works?
+Maps over every word in the given string and matches watchers to see if it matches on watcher requirements, it uses the watcher render function.
 
 ## Install
 
@@ -89,3 +96,25 @@ export function App() {
   );
 }
 ```
+
+
+## Props
+
+| Name              | Required | Type         | Default   | Description                                                                                                                                                                         |
+| :---------------- | :------- | :----------- | :-------- | :---------------------------------------- |
+| `children`        | Yes      | `Node`   |           | Only the text will be rendered |
+| `newLineWatcher`  |          | `String`    | `\\n`   | If `parseNewLine` is true, what character(s) should be considered as new line.   
+| `parseNewLine`    |          | `Boolean`  | `true`   | Whether new line should be parsed as `<br />`|
+| `watchers`        |          | `Array`   | link watcher    | An array of [watchers](#parse-tags-mentions-and-more) |
+
+
+### Watcher props
+
+| Name              | Required | Type         | Default   | Description                                                                                                                                                                         |
+| :---------------- | :------- | :----------- | :-------- | :---------------------------------------- |
+| `render`        | Yes      | `Function`   |  anchor       | A function to customize watcher render |
+| `type`        |          | `startsWith` or `endsWith` | `startsWith`    | Where should it watch to find the `watchFor` clue |
+| `watchFor`    |   Yes       | `link` or `email` or `String`  |`link`   | What to look up in the string |  
+
+
+
