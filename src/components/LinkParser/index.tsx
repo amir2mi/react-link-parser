@@ -4,7 +4,7 @@ import { isValidEmail, isValidUrl } from "../../utils/validation";
 
 interface WatchersProps {
   type?: "startsWith" | "endsWith";
-  watchFor: "link" | string;
+  watchFor: "link" | "email" | string;
   render: (children: string) => React.ReactNode;
 }
 
@@ -44,9 +44,9 @@ export default function LinkParser({
         const { watchFor, render } =
           watchers?.find(
             ({ type = "startsWith", watchFor }) =>
-              (watchFor !== "" && word?.[type](watchFor)) ||
               (watchFor === "email" && isValidEmail(word)) ||
-              (watchFor === "link" && isValidUrl(word))
+              (watchFor === "link" && isValidUrl(word)) ||
+              (watchFor !== "" && word?.[type](watchFor))
           ) || {};
 
         const content = index + 1 === words?.length ? ` ${word}` : `${word} `;
