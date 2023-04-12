@@ -2,7 +2,7 @@
 
 A React component that can parse plain text into links, emails or render elements that **start** or **end** with specific character or word the way you want.  
 
-## Install it
+## Install
 
 Install the `react-link-parser` package with npm or yarn:
 
