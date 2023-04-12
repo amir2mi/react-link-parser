@@ -1,0 +1,30 @@
+:root {
+  font-family: "Nunito", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+code {
+  font-size: 0.75em;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+span > code {
+  display: block;
+  padding: 0 1.25em;
+}
+
+.anim-delay-250 {
+  animation-delay: 250ms !important;
+}
+
+@media (prefers-reduced-motion) {
+  .anim-required {
+    animation: none !important;
+  }
+}
