@@ -117,7 +117,7 @@ function App() {
         <SectionTitle>Github</SectionTitle>
         <SectionSubtitle>
           If you liked the project and it was useful for your case, consider giving it a star in{" "}
-          <a href="github.com/amir2mi/react-link-parser/">Github</a>.
+          <a href="https://github.com/amir2mi/react-link-parser/">Github</a>.
         </SectionSubtitle>
       </Container>
     </main>
