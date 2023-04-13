@@ -1,6 +1,6 @@
 {
   "name": "react-link-parser",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Effortlessly parse text into links, tags, mentions, emails, etc.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -24,12 +24,12 @@
   "bugs": {
     "url": "https://github.com/amir2mi/react-link-parser/issues"
   },
-  "homepage": "https://flatifycss.com/",
+  "homepage": "https://react-link-parser.surge.sh/",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build-watch": "rollup -c -w --bundleConfigAsCjs",
     "playground": "cd playground && yarn dev",
-    "build-website": "cd website && yarn build && rm -rf ../docs/* && mv -v -f ./dist/* ../docs && rmdir ./dist",
+    "build-website": "cd website && yarn build && cd ./dist && surge",
     "install-all": "yarn install & cd playground && yarn install"
   },
   "devDependencies": {

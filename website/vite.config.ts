@@ -5,7 +5,6 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig(({ mode }) => {
   const config = {
     plugins: [react()],
-    base: "./react-link-parser",
     define: {} as any,
   };
 
