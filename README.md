@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/react-link-parser.svg?style=flat-square)](https://www.npmjs.com/package/react-link-parser)
 [![npm](https://img.shields.io/npm/l/react-link-parser.svg?style=flat-square)](https://github.com/danbovey/react-link-parser/blob/master/LICENSE)
 
-A React component that parses plain text into links, emails or renders elements that **start** or **end** with a specific character or word in the way you want.  
+A tiny React component (>1KB) that parses plain text into links, emails or renders elements that **start** or **end** with a specific character or word in the way you want.  
 
 ## How it works?
 Maps over every word in the given string and matches watchers to see if it matches on watcher requirements, it uses the watcher render function.
