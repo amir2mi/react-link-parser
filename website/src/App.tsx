@@ -1,11 +1,11 @@
 import { Highlight } from "react-flatifycss";
-import LinkParser from "../../src";
+import LinkParser from "react-link-parser";
 import styled from "styled-components";
 import Arrow from "./components/Arrow";
 import { CopyBlock, monoBlue } from "react-code-blocks";
 import { customWatcherCode, demoCode, installCode, simpleCode } from "./codes";
 import GitHubButton from "react-github-btn";
-import Link from "./components/Link";
+import Link from "./components/Arrow copy";
 
 function App() {
   return (
