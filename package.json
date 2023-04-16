@@ -29,7 +29,7 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "build-watch": "rollup -c -w --bundleConfigAsCjs",
     "playground": "cd playground && yarn dev",
-    "build-website": "cd website && yarn build && cd ./dist && surge",
+    "build-website": "cd website && yarn build && rm -rf ../docs && mkdir ../docs && mv ./dist/* ../docs",
     "install-all": "yarn install & cd playground && yarn install"
   },
   "devDependencies": {
