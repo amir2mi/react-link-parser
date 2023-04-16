@@ -130,10 +130,10 @@ function App() {
           looks for a string as part of the word to render it with the custom <code>render</code> prop.
         </p>
 
-        <SectionTitle>Github</SectionTitle>
+        <SectionTitle>GitHub</SectionTitle>
         <SectionSubtitle>
           If you liked the project and it was useful for your case, consider giving it a star in{" "}
-          <a href="https://github.com/amir2mi/react-link-parser/">Github</a>.
+          <a href="https://github.com/amir2mi/react-link-parser/">GitHub</a>.
         </SectionSubtitle>
       </Container>
     </main>
