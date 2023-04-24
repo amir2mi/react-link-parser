@@ -46,5 +46,5 @@ it("valid url should have http or https identifier", () => {
 })
 
 it("valid url can have persian or arabic name and domain", () => {
-  expect(isValidUrl("www.ایران.ربات")).toBe(true);
+  expect(isValidUrl("https://www.ایران.ربات")).toBe(true);
 })
