@@ -30,15 +30,18 @@
     "build-watch": "rollup -c -w --bundleConfigAsCjs",
     "playground": "cd playground && yarn dev",
     "build-website": "cd website && yarn build && rm -rf ../docs && mkdir ../docs && mv ./dist/* ../docs",
-    "install-all": "yarn install & cd playground && yarn install"
+    "install-all": "yarn install & cd playground && yarn install",
+    "test": "vitest --config vitest.config.js"
   },
   "devDependencies": {
     "@types/react": "^18.0.34",
     "@types/react-dom": "^18.0.11",
+    "jsdom": "^21.1.1",
     "rollup": "^3.20.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
